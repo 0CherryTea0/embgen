@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Эмбед Генератор</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <script src="main.js"></script>
+    <body bgcolor="#2e2e2e">
+        <div align=center width=100% height=100%><div class="content">
+                <div id="header"><strong>Эмбед Генератор</strong></div>
+                <hr>
+                <div class="header">Вебхук</div>
+                <input type="text" placeholder="URL" id="webhook">
+                <hr>
+                <div class="header">Сообщение</div>
+                <textarea placeholder="Сообщение" maxlength="2000" id="message" oninput="msgcount()"></textarea>
+                <div class="counter" id="msg_counter">0/2000</div>
+                <hr>
+                <div class="header">Эмбед</div>
+                <div class="emb_header">Цвет</div>
+                <input type="color" id="color">
+                <div class="emb_header">Автор</div>
+                <input type="text" placeholder="URL Картинки" id="author_imgurl">
+                <input type="text" placeholder="Гиперссылка" id="author_link">
+                <textarea placeholder="Текст" maxlength="256" id="author" oninput="autcount()"></textarea>
+                <div class="counter" id="aut_counter">0/256</div>
+                <br>
+                <div class="emb_header">Заголовок</div>
+                <input type="text" placeholder="Гиперссылка" id="title_link">
+                <textarea placeholder="Заголовок" maxlength="256" id="title" oninput="ttlcount()"></textarea>
+                <div class="counter" id="ttl_counter">0/256</div>
+                <br>
+                <div class="emb_header">Описание</div>
+                <textarea placeholder="Сообщение" maxlength="2048" id="description" oninput="dsccount()"></textarea>
+                <div class="counter" id="dsc_counter">0/2048</div>
+                <br>
+                <div class="emb_header">Филды</div>
+                <ul id="fields"></ul>
+                <button id="addbut" align=center valign=middle onclick="addfield()">+</button>
+                <p></p>
+                <div class="emb_header">Картинки</div>
+                <input type="text" placeholder="URL маленькой картинки" id="thumbnail_url">
+                <input type="text" placeholder="URL большой картинки" id="image_url">
+                <div class="emb_header">Футер</div>
+                <input type="text" placeholder="URL Картинки" id="footer_imgurl">
+                <textarea placeholder="Текст" maxlength="256" id="footer" oninput="ftrcount()"></textarea>
+                <div class="counter" id="ftr_counter">0/256</div>
+                <br>
+                <div class="emb_header">Отметка времени</div>
+                <input type="date" id="date">
+                <input type="time" id="time">
+                <hr>
+                <button id="send" onclick="send()">Отправить</button><span id="state"></span>
+                <p></p>
+            </div>
+    </body>
+    <style>
+    </style>
+</html>
