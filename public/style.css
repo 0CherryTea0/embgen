@@ -106,3 +106,8 @@ span {
     font-family: Arial;
     font-size: 1.3em;
 }
+#enable_embed_div {
+    width: 32;
+    height: 32;
+    margin-bottom: 15px;
+}

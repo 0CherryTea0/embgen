@@ -15,6 +15,7 @@ app.post('/send', (req, res) => {
     .end((err, webhook_res) => {
         if(!webhook_res) return res.status(400).send('Неверный URL вебхука');
         if(!webhook_res.body.id || !webhook_res.body.token) return res.status(400).send('Неверный URL вебхука');
+        if(!req.body.message && !req.body.embed.enabled) return res.status(400).send('Введите эмбед или сообщение');
         const hook = new Discord.WebhookClient(webhook_res.body.id, webhook_res.body.token);
         let embed = new Discord.MessageEmbed()
         .setColor(req.body.embed.color)
@@ -31,7 +32,7 @@ app.post('/send', (req, res) => {
             if(!field.value || field.value == ' ') field.value = '⁣';
             embed.addField(field.name, field.value, field.inline)
         })
-        hook.send(req.body.message, embed).then(() => {
+        hook.send(req.body.message, req.body.embed.enabled ? embed : null).then(() => {
             res.sendStatus(200);
         })
         .catch(err => {

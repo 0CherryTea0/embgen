@@ -19,38 +19,39 @@
                 <div class="counter" id="msg_counter">0/2000</div>
                 <hr>
                 <div class="header">Эмбед</div>
+                <div id="enable_embed_div"><input type="checkbox" id="enable_embed" oninput="enemb()"></div>
                 <div class="emb_header">Цвет</div>
-                <input type="color" id="color">
+                <input type="color" id="color" class="emb_input" disabled>
                 <div class="emb_header">Автор</div>
-                <input type="text" placeholder="URL Картинки" id="author_imgurl">
-                <input type="text" placeholder="Гиперссылка" id="author_link">
-                <textarea placeholder="Текст" maxlength="256" id="author" oninput="autcount()"></textarea>
+                <input type="text" placeholder="URL Картинки" id="author_imgurl" class="emb_input" disabled>
+                <input type="text" placeholder="Гиперссылка" id="author_link" class="emb_input" disabled>
+                <textarea placeholder="Текст" maxlength="256" id="author" oninput="autcount()" class="emb_input" disabled></textarea>
                 <div class="counter" id="aut_counter">0/256</div>
                 <br>
                 <div class="emb_header">Заголовок</div>
-                <input type="text" placeholder="Гиперссылка" id="title_link">
-                <textarea placeholder="Заголовок" maxlength="256" id="title" oninput="ttlcount()"></textarea>
+                <input type="text" placeholder="Гиперссылка" id="title_link" class="emb_input" disabled>
+                <textarea placeholder="Заголовок" maxlength="256" id="title" oninput="ttlcount()" class="emb_input" disabled></textarea>
                 <div class="counter" id="ttl_counter">0/256</div>
                 <br>
                 <div class="emb_header">Описание</div>
-                <textarea placeholder="Сообщение" maxlength="2048" id="description" oninput="dsccount()"></textarea>
+                <textarea placeholder="Сообщение" maxlength="2048" id="description" oninput="dsccount()" class="emb_input" disabled></textarea>
                 <div class="counter" id="dsc_counter">0/2048</div>
                 <br>
                 <div class="emb_header">Филды</div>
                 <ul id="fields"></ul>
-                <button id="addbut" align=center valign=middle onclick="addfield()">+</button>
+                <button id="addbut" align=center valign=middle onclick="addfield()" class="emb_input" disabled>+</button>
                 <p></p>
                 <div class="emb_header">Картинки</div>
-                <input type="text" placeholder="URL маленькой картинки" id="thumbnail_url">
-                <input type="text" placeholder="URL большой картинки" id="image_url">
+                <input type="text" placeholder="URL маленькой картинки" id="thumbnail_url" class="emb_input" disabled>
+                <input type="text" placeholder="URL большой картинки" id="image_url" class="emb_input" disabled>
                 <div class="emb_header">Футер</div>
-                <input type="text" placeholder="URL Картинки" id="footer_imgurl">
-                <textarea placeholder="Текст" maxlength="256" id="footer" oninput="ftrcount()"></textarea>
+                <input type="text" placeholder="URL Картинки" id="footer_imgurl" class="emb_input" disabled>
+                <textarea placeholder="Текст" maxlength="256" id="footer" oninput="ftrcount()" class="emb_input" disabled></textarea>
                 <div class="counter" id="ftr_counter">0/256</div>
                 <br>
                 <div class="emb_header">Отметка времени</div>
-                <input type="date" id="date">
-                <input type="time" id="time">
+                <input type="date" id="date" class="emb_input" disabled>
+                <input type="time" id="time" class="emb_input" disabled>
                 <hr>
                 <button id="send" onclick="send()">Отправить</button><span id="state"></span>
                 <p></p>

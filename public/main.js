@@ -13,6 +13,13 @@ function dsccount() {
 function ftrcount() {
     document.getElementById('ftr_counter').innerHTML = document.getElementById('footer').value.length + '/256';
 }
+function enemb() {
+    let elements = document.getElementsByClassName('emb_input');
+    for(let element in elements) {
+        if(document.getElementById('enable_embed').checked) elements[element].disabled = false;
+        else elements[element].disabled = true;
+    }
+}
 function addfield() {
     let ol = document.getElementById('fields');
     let li = document.createElement('li');
@@ -75,6 +82,7 @@ function send() {
     embed.embed = {};
     embed.webhook = document.getElementById('webhook').value;
     embed.message = document.getElementById('message').value;
+    embed.embed.enabled = document.getElementById('enable_embed').checked;
     embed.embed.color = document.getElementById('color').value;
     embed.embed.author = {
         image: document.getElementById('author_imgurl').value,
